@@ -1,0 +1,38 @@
+PROGRAM PLC_PRG
+VAR
+	bS_FC_Empujador_1          AT %IX0.0: BOOL; (*I1*)
+	bS_IC_Empujador_1          AT %IX0.1: BOOL; (*I2*)
+	bS_FC_Empujador_2          AT %IX0.2: BOOL; (*I3*)
+	bS_IC_Empujador_2          AT %IX0.3: BOOL; (*I4*)
+	bS_FT_Empujador_1          AT %IX0.4: BOOL; (*I5*)
+	bS_FT_Fresadora            AT %IX0.5: BOOL; (*I6*)
+	bS_FT_Carga                AT %IX0.6: BOOL; (*I7*)
+	bS_FT_Taladro              AT %IX0.7: BOOL; (*I8*)
+	bS_FT_Salida               AT %IX1.0: BOOL; (*I9*)
+	
+	bBotonEncendidoHMI         AT %IX1.1: BOOL; (*Boton Inicio HMI*)
+	bBotonEmergenciaHMIW                : BOOL; (*Boton Inicio HMIW*)	
+	bBotonInicioHMI            AT %IX1.2: BOOL; (*Boton Inicio HMI*)
+	bBotonInicioHMIW                    : BOOL; (*Boton Inicio HMIW*)
+    bBotonPiezaHMIW            AT %QX1.7: BOOL; (*Boton Poner Pieza*)	
+	bFinSoplado                         : BOOL; (*Activa Cuando termina Soplado*)
+	
+	bA_M_Empujador_1_Adelante  AT %QX0.4: BOOL; (*Q1*)
+	bA_M_Empujador_1_Atras     AT %QX0.5: BOOL; (*Q2*)
+	bA_M_Empujador_2_Adelante  AT %QX0.6: BOOL; (*Q3*)
+	bA_M_Empujador_2_Atras     AT %QX0.7: BOOL; (*Q4*)
+	bA_M_Cinta_Alimentacion    AT %QX1.0: BOOL; (*Q5*)
+	bA_M_Cinta_Fresadora       AT %QX1.1: BOOL; (*Q6*)
+	bA_M_Fresadora             AT %QX1.2: BOOL; (*Q7*)
+	bA_M_Cinta_Taladro         AT %QX1.3: BOOL; (*Q8*)
+	bA_M_Taladro               AT %QX1.4: BOOL; (*Q9*)
+	bA_M_Cinta_Salida          AT %QX1.5: BOOL; (*Q10*)
+	bA_Habilitar_Sistema       AT %QX1.6: BOOL; (*Q11*)
+END_VAR
+
+VAR_OUTPUT
+	tEmpujador_1: TIME:=T#1S;
+	tFresado: TIME:=T#5S;
+	tTaladrado: TIME:=T#5S;
+	tEmpujador_2: TIME:=T#2800MS;
+END_VAR

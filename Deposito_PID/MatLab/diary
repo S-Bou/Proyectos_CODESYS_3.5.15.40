@@ -1,0 +1,33 @@
+>> ControlNivel
+G1
+
+>>G1 =
+ 
+      -0.02505
+  -----------------
+  3.142 s + 0.04167
+ 
+Continuous-time transfer function.
+>> sisotool(G1)
+>> pole(G1)
+
+ans =
+
+   -0.0133
+
+>> [Kc, Ti, Td]=pid2isa(C)
+
+Kc =
+
+   -4.8612
+
+
+Ti =
+
+   75.1880
+
+
+Td =
+
+     0
+diary off
